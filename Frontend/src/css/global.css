@@ -1,0 +1,630 @@
+@import "tailwindcss";
+
+/* APP */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* same as min-h-screen */
+}
+
+.content {
+  flex: 1; /* same as flex-1 */
+}
+
+/* Sign IN */
+/* Container */
+/* Container */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  padding: 1rem;
+}
+
+.login-error-container {
+  position: fixed;
+  top: 1rem; /* top-4 */
+  left: 50%; /* left-1/2 */
+  transform: translateX(-50%); /* -translate-x-1/2 */
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  border-radius: 0.75rem; /* rounded-xl */
+  background-color: #dc2626; /* bg-red-600 */
+  color: #ffffff; /* text-white */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25); /* shadow-xl */
+  transition: all 0.3s ease; /* transition-all duration-300 */
+  z-index: 50; /* z-50 */
+}
+
+.login-error-text {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  margin: 0 0.5rem; /* mx-2 */
+}
+
+.login-close-button {
+  position: absolute;
+  top: 10px; /* top-[10px] */
+  right: 0.5rem; /* right-2 */
+  font-size: 1.25rem; /* text-xl */
+  line-height: 1; /* leading-none */
+  color: #ffffff; /* text-white */
+  opacity: 0.7; /* opacity-70 */
+  cursor: pointer; /* cursor-pointer */
+  background: none;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+
+.login-close-button:hover {
+  opacity: 1; /* hover:opacity-100 */
+}
+
+/* Card */
+.login-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.login-hidden {
+  opacity: 0;
+  transform: scale(2);
+}
+
+/* Left Side */
+.login-left {
+  flex: 1;
+  background: white;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border-right: 2px solid black; */
+}
+
+
+.login-logos-container{
+  display: flex;
+  align-items: center;
+}
+.assamAirLogo {
+  border-left: 2px solid black;
+}
+
+/* Styles for mobile devices (screen width up to 639px) */
+@media (max-width: 639px) {
+  .ongcLogo {
+    height: 120px;
+  }
+  .assamAirLogo {
+    height: 80px;
+  }
+}
+
+
+.login-left h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.login-left p {
+  margin-bottom: 2rem;
+  max-width: 300px;
+}
+
+/* Right Side */
+.login-right {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-right h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.login-right p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* Form */
+.login-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: #1a3765;
+  box-shadow: 0 0 0 2px rgba(26, 55, 101, 0.2);
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 100px;
+  background: #1a3765;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #0d1c4a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right {
+    width: 100%;
+  }
+}
+
+
+/* Dashboard */
+/* Dashboard layout */
+.dashboard {
+  min-height: 100vh;
+  background-color: #f9fafb; /* gray-50 */
+  padding: 2rem 1rem;
+}
+
+.dashboard-container {
+  max-width: 91.666667%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+}
+/*
+  Base styles for all screen sizes (mobile-first approach).
+  The updated-status container is fixed to the top-right.
+*/
+/*
+  Base styles for all screen sizes (mobile-first approach).
+  The updated-status container is centered horizontally by default.
+*/
+.updated-status {
+  position: fixed;
+  z-index: 40;
+  top: 4.1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Styles applied on large screens (1024px and up) to position it on the right */
+@media (min-width: 1024px) {
+  .updated-status {
+    left: auto;
+    right: 5.5rem;
+    transform: none; /* Remove the transform to prevent horizontal shift */
+  }
+}
+@media (max-width: 425px) {
+  .updated-status {
+    width: 65%;
+  }
+}
+@media (max-width: 375px) {
+  .updated-status {
+    width: 75%;
+  }
+}
+
+.updated-status .label {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.updated-status .date {
+  font-weight: 700;
+  color: #facc15;
+}
+
+.updated-status .time {
+  font-weight: 700;
+  color: #22d3ee;
+}
+
+.updated-status .at {
+  opacity: 0.75;
+}
+
+
+
+/* Error */
+.error {
+  color: #dc2626; /* red-600 */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Section */
+.section {
+  margin-bottom: 3.5rem;
+  border: 2px solid #233e73;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.section-heading {
+  background: linear-gradient(to bottom right, #2e4784, #1a3765, #0d1d4b);
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+/* Section content grid */
+.section-content {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .section-content {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .section-content {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (min-width: 1536px) {
+  .section-content {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Sensor card */
+.sensor-card {
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 0.75rem;
+  transition: transform 0.3s, box-shadow 0.3s, outline 0.3s;
+}
+
+.sensor-card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  outline: 1px solid #3b82f6; /* blue-500 */
+}
+
+/* Indicator dot */
+.indicator {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  border: 2px solid white;
+}
+.indicator.red { background-color: #ef4444; }    /* red-500 */
+.indicator.yellow { background-color: #eab308; } /* yellow-500 */
+.indicator.green { background-color: #22c55e; }  /* green-500 */
+.indicator.gray { background-color: #9ca3af; }   /* gray-400 */
+
+/* Sensor name */
+.sensor-name {
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280;     /* gray-500 */
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Measurement */
+.measurement {
+  display: flex;
+  align-items: baseline;
+  margin-top: 0.25rem;
+}
+.value {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 800;
+  color: #111827; /* gray-900 */
+}
+.unit {
+  margin-left: 0.25rem;
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280;      /* gray-500 */
+}
+
+/* Warning box */
+.warning {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.625rem; /* text-[10px] */
+  font-weight: 500;
+  color: #b91c1c; /* red-700 */
+  background-color: #fee2e2; /* red-100 */
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+}
+.icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+  color: #ef4444; /* red-500 */
+}
+
+/* Border color variations */
+.border-green {
+  border-left-color: #22c55e; /* green-500 */
+}
+
+.border-red {
+  border-left-color: #ef4444; /* red-500 */
+}
+
+.border-yellow {
+  border-left-color: #eab308; /* yellow-500 */
+}
+
+/* Text styles */
+.sensor-label {
+  font-size: 0.75rem; /* text-xs */
+  color: #6b7280; /* text-gray-500 */
+  text-transform: uppercase; /* uppercase */
+}
+
+.sensor-data {
+  margin-top: 0.5rem; /* mt-2 */
+  display: flex; /* flex */
+  align-items: baseline; /* items-baseline */
+  gap: 0.25rem; /* gap-1 */
+}
+
+.sensor-value {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+}
+
+.sensor-unit {
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* text-gray-600 */
+}
+
+/* Protected Route */
+.auth-checking {
+  text-align: center; /* text-center */
+  padding: 1rem; /* p-4 */
+  font-size: 1rem;
+  color: #374151; /* neutral gray */
+}
+
+/* navbar */
+/* Navbar */
+.navbar {
+  position: fixed; /* 👈 keeps navbar at top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50; /* keeps it above everything */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 4rem; /* h-16 */
+  padding: 0.375rem;
+  background: linear-gradient(to left, black, #d1d5db);
+}
+
+.navbar-logo {
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Make space for navbar */
+.content {
+  flex: 1;
+  padding-top: 4rem; /* 👈 same as navbar height (h-16) */
+}
+
+/* Footer */
+.footer {
+  position: fixed;     /* stick to viewport */
+  bottom: 0;           /* pin at bottom */
+  left: 0;
+  right: 0;
+  z-index: 40;         /* keep above content if overlap */
+
+  background-color: #282c34;
+  color: white;
+  padding: 0.75rem 1rem;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 0.875rem;
+  gap: 0.5rem;
+}
+
+/* Push content above footer */
+.content {
+  padding-bottom: 4rem; /* same height as footer */
+}
+
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    font-size: 1rem;
+    gap: 1rem;
+  }
+  .footer-left {
+    text-align: left;
+  }
+  .footer-right {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    rgb(26, 32, 44),
+    rgb(45, 55, 72),
+    rgb(0, 0, 0)
+  );
+}
+
+.error-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgb(55, 65, 81);
+  border-radius: 1rem; /* 16px */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 2rem; /* 32px */
+  width: 100%;
+  max-width: 28rem; /* 448px */
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.error-icon {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  width: 4rem; /* 64px */
+  height: 4rem; /* 64px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px; /* rounded-full */
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.error-icon > span {
+  color: rgb(239, 68, 68);
+  font-size: 2rem; /* 32px */
+}
+
+.error-title {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+  color: rgb(248, 113, 113);
+  margin-bottom: 0.5rem;
+}
+
+.error-message {
+  color: rgb(209, 213, 219);
+  margin-bottom: 1.5rem;
+}
+
+.error-button {
+  width: 100%;
+  cursor: pointer;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgb(239, 68, 68);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition-property: all;
+  transition-duration: 200ms;
+}
+
+.error-button:hover {
+  background-color: rgb(220, 38, 38);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
